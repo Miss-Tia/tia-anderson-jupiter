@@ -1,0 +1,117 @@
+  body {
+    background-color: #bad0fa; 
+    color: #363b45; 
+    font-family: "Afacad Flux", serif; 
+    margin: 0;
+    padding: 0;
+}
+
+
+@import url('<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Baskervville+SC&family=Gruppo&display=swap"');
+
+/* Header */
+h1 {
+    font-size: 3rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    color: #1A202C; 
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Nav */
+nav ul {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px; 
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #2f5786; 
+    font-weight: 700;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+section {
+    padding: 40px 20px; 
+    margin: 20px 0;
+}
+
+/* About */
+#about {
+    text-align: justify; 
+}
+
+/* Heading */
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C5282; 
+    margin-bottom: 20px;
+}
+
+/* List */
+#experience ul {
+    padding: 0;
+    list-style: none;
+}
+
+#experience ul li {
+    background-color: #EDF2F7; 
+    border: 1px solid #2C5282; 
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+
+#connect ul {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    padding: 0;
+    gap: 20px; 
+}
+#connect h2 {
+    text-align: center; 
+    margin-bottom: 20px;
+}   
+#connect ul li {
+    display: inline-block;
+}
+
+#connect ul li a img {
+    width: 50px; /* Set the size of the icons */
+    height: 50px;
+    border-radius: 80%; /* Optional: make the icons circular */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#connect ul li a img:hover {
+    transform: scale(1.1); /* hover effect? */
+    filter: brightness(1.2); /* hover brighter? */
+}
+
+/* Image Styles */
+img {
+    max-width: 150px;
+    border-radius: 60%; 
+    display: block;
+    margin: 0 auto 20px; 
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #A0AEC0; 
+}
