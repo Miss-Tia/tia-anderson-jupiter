@@ -20,13 +20,22 @@ h1 {
 }
 
 /* Nav */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: #bad1fb; 
+    z-index: 1000;  
+    padding: 10px 0;
+}
 nav ul {
     display: flex;
     justify-content: center; 
+    background-color: #edf2f7; 
     list-style: none;
-    padding: 0;
+    border: 2px solid lightgray;
+    padding: 10px;
     margin: 0;
-    gap: 20px; 
+    gap: 40px; 
 }
 
 nav ul li a {
@@ -58,10 +67,54 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* List */
+
 #experience ul {
     padding: 0;
     list-style: none;
+}
+
+#experience {
+    padding: 40px 20px;
+}
+
+#experience .experience-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    background-color: #EDF2F7;
+    border: 5px solid lightgray;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#experience .experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-weight: bold;
+    gap: 5px;
+}
+#experience .company-name {
+    display: block;
+    font-size: 1rem;
+    font-style: italic;
+    color: #4A5568;
+    margin-top: 0px;
+
+}
+.job-title {
+    color: #2C5282;
+}
+
+.job-dates {
+    font-size: 0.9rem;
+    color: #718096;
+}
+
+.job-description {
+    margin-top: 10px;
+    color: #4A5568;
 }
 
 #experience ul li {
@@ -72,33 +125,36 @@ h2 {
     border-radius: 8px;
 }
 
-
 #connect ul {
     display: flex;
-    justify-content: center; 
-    list-style: none;
-    padding: 0;
-    gap: 20px; 
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap; 
 }
+
+#connect ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#connect ul li a img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+#connect ul li a img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
 #connect h2 {
     text-align: center; 
     margin-bottom: 20px;
 }   
-#connect ul li {
-    display: inline-block;
-}
 
-#connect ul li a img {
-    width: 50px; /* Set the size of the icons */
-    height: 50px;
-    border-radius: 80%; /* Optional: make the icons circular */
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-#connect ul li a img:hover {
-    transform: scale(1.1); /* hover effect? */
-    filter: brightness(1.2); /* hover brighter? */
-}
 
 /* Image Styles */
 img {
@@ -108,7 +164,7 @@ img {
     margin: 0 auto 20px; 
 }
 
-/* Footer */
+
 footer {
     text-align: center;
     padding: 20px;
