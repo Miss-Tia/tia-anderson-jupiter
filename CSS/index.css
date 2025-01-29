@@ -1,4 +1,29 @@
-  body {
+ /* Mobile first*/
+
+/* tablet media query */
+@media (min-width: 768px) {
+    nav ul {
+        gap: 60px; /* More spaced out for tablet screen */
+        padding: 20px; /* padding for alignment */
+    }
+
+    #experience .experience-item {
+        display: flex;
+        flex-direction: column; /* change to side by side */
+        align-items: flex-start;
+    }
+
+    #experience .experience-header {
+        gap: 15px; /* space between title and dates */
+    }
+
+    #connect ul li a img {
+        width: 80px; /* bigger icons */
+        height: 80px;
+    }
+}
+
+ body {
     background-color: #bad0fa; 
     color: #363b45; 
     font-family: "Afacad Flux", serif; 
@@ -6,6 +31,26 @@
     padding: 0;
 }
 
+/* Desktop devices */
+@media (min-width: 1024px) {
+    nav ul {
+        gap: 80px; /* more spacing for larger screens */
+    }
+    h1 {
+        font-size: 4rem; /* bigger font */
+    }
+    section {
+        padding: 60px 40px; /* more padding for larger screen */
+    }
+    #experience {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);/* make it a grid */
+        gap: 20px; /* grid item space between */
+    }
+    #connect ul {
+        justify-content: space-evenly; /* space links evenly */
+    }
+}
 
 @import url('<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Baskervville+SC&family=Gruppo&display=swap"');
 
@@ -68,40 +113,22 @@ h2 {
 }
 
 
-#experience ul {
-    padding: 0;
-    list-style: none;
-}
-
-#experience {
-    padding: 40px 20px;
+#experience h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C5282;
+    margin-bottom: 20px;
 }
 
 #experience .experience-item {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
     background-color: #EDF2F7;
     border: 5px solid lightgray;
     border-radius: 8px;
     padding: 20px;
+    margin-bottom: 20px;
 }
-
-#experience .experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-weight: bold;
-    gap: 5px;
-}
-#experience .company-name {
-    display: block;
-    font-size: 1rem;
-    font-style: italic;
-    color: #4A5568;
-    margin-top: 0px;
-
+#experience .experience-item:first-of-type {
+    margin-top: 10px;
 }
 .job-title {
     color: #2C5282;
@@ -169,5 +196,5 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
-    color: #A0AEC0; 
+    color: #6b7280; 
 }
