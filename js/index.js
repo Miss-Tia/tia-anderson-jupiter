@@ -52,39 +52,67 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Email:", usersEmail);
         console.log("Message:", usersMessage);
 
- /* Select the #messages section */
-    const messageSection = document.getElementById("messages");
+        /* Select the #messages section */
+        const messageSection = document.getElementById("messages");
 
-/* Select ul inside #messages */
-    const messageList = messageSection.querySelector("ul");
+         /* Select ul inside #messages */
+        const messageList = messageSection.querySelector("ul");
 
-/* Create new li */
-    const newMessage = document.createElement("li");
+        /* Create new li */
+        const newMessage = document.createElement("li");
 
-/* inner HTML for new message */
-    newMessage.innerHTML = `
-        <a href="mailto:${usersEmail}">${usersName}</a>: 
-        <span>${usersMessage}</span>
-    `;
+        /* inner HTML for new message */
+        newMessage.innerHTML = `
+            <a href="mailto:${usersEmail}">${usersName}</a>: 
+            <span>${usersMessage}</span>
+        `;
 
-/* remove button */
-    const removeButton = document.createElement("button");
-    removeButton.innerText = "remove";
-    removeButton.type = "button";
+        /* remove button */
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "remove";
+        removeButton.type = "button";
 
-/* click event listener to remove button */
-    removeButton.addEventListener("click", function () {
-        const entry = removeButton.parentNode;
-        entry.remove();
-    });
+        /* click event listener to remove button */
+        removeButton.addEventListener("click", function () {
+            const entry = removeButton.parentNode;
+            entry.remove();
+        });
 
-/* Append remove button to the new message */
-    newMessage.appendChild(removeButton);
+        /* Append remove button to the new message */
+        newMessage.appendChild(removeButton);
 
-/* Append new message to the message list */
-    messageList.appendChild(newMessage);    
+        /* Append new message to the message list */
+        messageList.appendChild(newMessage);    
 
-/* Reset form */
+        /* Reset form */
         messageForm.reset();
     });
 });
+/* Fetch GH Repo */
+fetch("https://api.github.com/users/Miss-Tia/repos")
+    .then(response => response.json())
+    .then(repos => {
+        const repositories = repos;
+        console.log("Repositories", repositories);
+    })
+    .catch(error => console.error("Error fetching repositories:", error));
+    fetch("https://api.github.com/users/Miss-Tia/repos")
+  .then(response => response.json()) /* Convert response to JSON */
+  .then(data => {
+      const repositories = data; /* Store parsed data */
+      console.log(repositories); /* Log repositories */
+
+      /* Select projects section */
+      const projectSection = document.getElementById("projects");
+
+      /* Select projects section list */
+      const projectList = projectSection.querySelector("ul");
+
+      /* for loop for repositories array */
+      for (let i = 0; i < repositories.length; i++) {
+          const project = document.createElement("li"); /* Create a new list item */
+          project.innerText = repositories[i].name; /* Set text to repo name */
+          projectList.appendChild(project); /* Append project to projectList */
+      }
+  })
+  .catch(error => console.error("Error fetching repositories:", error));
