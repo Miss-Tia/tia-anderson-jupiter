@@ -110,9 +110,9 @@ fetch("https://api.github.com/users/Miss-Tia/repos")
 
       /* for loop for repositories array */
       for (let i = 0; i < repositories.length; i++) {
-          const project = document.createElement("li"); /* Create a new list item */
+          const project = document.createElement("li"); /* Create a new li */
           project.innerText = repositories[i].name; /* Set text to repo name */
-          projectList.appendChild(project); /* Append project to projectList */
+          projectList.appendChild(project); /* Append to projectList */
       }
   })
   .catch(error => console.error("Error fetching repositories:", error));

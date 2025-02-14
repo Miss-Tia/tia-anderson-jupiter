@@ -371,7 +371,7 @@
         background-color: #c53030;
     }
 
-/* Tablet Styles */
+/* Tablet  */
 @media (min-width: 768px) {
     
     #messages li {
@@ -389,7 +389,7 @@
     }
 }
 
-/* Desktop Styles */
+/* Desktop  */
 @media (min-width: 1024px) {
 
 
