@@ -17,7 +17,7 @@ copyright.innerHTML = `&copy; ${thisYear} Tia Anderson. All rights reserved.`;
 footer.appendChild(copyright);
 
 /* skills array */
-const skills = ["JavaScript", "HTML", "CSS", "Liquid", "GitHub"];
+const skills = ["JavaScript", "HTML", "CSS", "Liquid", "GitHub", "Relational Database"];
 
 /* select skills section */
 const skillsSection = document.getElementById('skills');
@@ -34,85 +34,103 @@ for (let i = 0; i < skills.length; i++) {
 /* form */
 
 document.addEventListener("DOMContentLoaded", function () {
-    /* Select form */
     const messageForm = document.querySelector("form[name='leave_message']");
+    const messageSection = document.getElementById("messages");
+    const messageList = messageSection.querySelector("ul");
 
-    /* Add submit event listener */
+    // Initially hide the messages section
+    if (messageList.children.length === 0) {
+        messageSection.style.display = "none";
+    }
+
     messageForm.addEventListener("submit", function (event) {
-        /* Prevent default submission behavior */
         event.preventDefault();
 
-        /* Get form values */
         const usersName = event.target.usersName.value;
         const usersEmail = event.target.usersEmail.value;
         const usersMessage = event.target.usersMessage.value;
 
-        /* Log values to console */
-        console.log("Name:", usersName);
-        console.log("Email:", usersEmail);
-        console.log("Message:", usersMessage);
-
-        /* Select the #messages section */
-        const messageSection = document.getElementById("messages");
-
-         /* Select ul inside #messages */
-        const messageList = messageSection.querySelector("ul");
-
-        /* Create new li */
         const newMessage = document.createElement("li");
+        const messageContainer = document.createElement("div");
+        messageContainer.classList.add("message-container");
 
-        /* inner HTML for new message */
-        newMessage.innerHTML = `
-            <a href="mailto:${usersEmail}">${usersName}</a>: 
-            <span>${usersMessage}</span>
-        `;
+        const nameLink = document.createElement("a");
+        nameLink.href = `mailto:${usersEmail}`;
+        nameLink.innerText = usersName;
+        nameLink.classList.add("message-name");
 
-        /* remove button */
-        const removeButton = document.createElement("button");
-        removeButton.innerText = "remove";
-        removeButton.type = "button";
+        const messageText = document.createElement("span");
+        messageText.innerText = `: ${usersMessage}`;
+        messageText.classList.add("message-text");
 
-        /* click event listener to remove button */
-        removeButton.addEventListener("click", function () {
-            const entry = removeButton.parentNode;
-            entry.remove();
+        messageContainer.appendChild(nameLink);
+        messageContainer.appendChild(messageText);
+
+        const editButton = document.createElement("button");
+        editButton.innerText = "Edit";
+        editButton.classList.add("edit-button");
+
+        editButton.addEventListener("click", function () {
+            const newMessageText = prompt("Edit your message:", messageText.innerText.slice(2));
+            if (newMessageText !== null) {
+                messageText.innerText = `: ${newMessageText}`;
+            }
         });
 
-        /* Append remove button to the new message */
+        const removeButton = document.createElement("button");
+        removeButton.innerText = "Remove";
+        removeButton.classList.add("remove-button");
+
+        removeButton.addEventListener("click", function () {
+            newMessage.remove();
+            toggleMessageSection();
+        });
+
+        newMessage.appendChild(messageContainer);
+        newMessage.appendChild(editButton);
         newMessage.appendChild(removeButton);
+        messageList.appendChild(newMessage);
 
-        /* Append new message to the message list */
-        messageList.appendChild(newMessage);    
+        toggleMessageSection(); // Show message when added
 
-        /* Reset form */
         messageForm.reset();
     });
+
+    function toggleMessageSection() {
+        if (messageList.children.length === 0) {
+            messageSection.style.display = "none";
+        } else {
+            messageSection.style.display = "block";
+        }
+    }
 });
-/* Fetch GH Repo */
+
+/* fetch GH repos */
 fetch("https://api.github.com/users/Miss-Tia/repos")
     .then(response => response.json())
     .then(repos => {
         const repositories = repos;
         console.log("Repositories", repositories);
+
+        /* select projects section */
+        const projectSection = document.getElementById("projects");
+
+        /* select projects section list */
+        const projectList = projectSection.querySelector("ul");
+        projectList.innerHTML = "";
+
+        /* loop through repos and create links */
+        repositories.forEach(repo => {
+            const projectItem = document.createElement("li"); 
+            const projectLink = document.createElement("a"); // anchor
+
+            projectLink.href = repo.html_url; // set GH url
+            projectLink.textContent = repo.name; // repo name text
+            projectLink.target = "_blank"; // target= new tab
+            projectLink.rel = "noopener noreferrer"; 
+
+            projectItem.appendChild(projectLink); // add link to li
+            projectList.appendChild(projectItem); // add li to projects
+        });
     })
     .catch(error => console.error("Error fetching repositories:", error));
-    fetch("https://api.github.com/users/Miss-Tia/repos")
-  .then(response => response.json()) /* Convert response to JSON */
-  .then(data => {
-      const repositories = data; /* Store parsed data */
-      console.log(repositories); /* Log repositories */
-
-      /* Select projects section */
-      const projectSection = document.getElementById("projects");
-
-      /* Select projects section list */
-      const projectList = projectSection.querySelector("ul");
-
-      /* for loop for repositories array */
-      for (let i = 0; i < repositories.length; i++) {
-          const project = document.createElement("li"); /* Create a new li */
-          project.innerText = repositories[i].name; /* Set text to repo name */
-          projectList.appendChild(project); /* Append to projectList */
-      }
-  })
-  .catch(error => console.error("Error fetching repositories:", error));
