@@ -1,124 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head> 
-    <meta charset="UTF-8">
-    <meta name="author" content="Tia Anderson">
-    <meta name="description" content="Portfolio of Tia Anderson, showcasing experiences, projects, and social media links.">
-    <title>Tia Anderson's Portfolio</title> 
-    <link href="css/index.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tia Anderson">
+  <meta name="description" content="Portfolio of Tia Anderson, showcasing skills, current work, and story-driven design.">
+  <title>Tia Anderson | Rising Software Engineer</title>
+  <link href="css/index.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <img src="images/IMG_9516.JPEG" alt="Photo of Tia Anderson smiling and posing nicely at a dinner table">
-        <h1> TIA ANDERSON</h1>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#leave-message">Message Me!</a></li>
-            <li><a href="#connect">My Socials</a></li>
-            <li><a href="#email-me">Email</a></li>
-        </ul>
-    </nav>
-    
-    <section id="projects">
-        <h2>Projects</h2>
-        <ul></ul>
-    </section>
-    
-    <section id="about">
-        <h2>About</h2>
-        <p><strong> Hi! I am Tia Anderson, a passionate learner, noticer, tinkerer and aspiring software engineer. I enjoy digging in and learning what makes software and webpages work the way they do, along with creating them. When I'm not coding, I love cooking, gardening, and exploring new technologies. I may or may not also moonlight as a unicorn. I currently work in tech, but not the area I'm aiming for yet so I'm deep in the throes of learning programming languages and creating projects for all to see. </strong></p>
-    </section>
+  <!-- Hero Section -->
+  <header class="hero">
+  <img src="images/IMG_9516.JPEG" alt="Photo of Tia Anderson" class="hero-img">
+  <h1>Hi, I'm Tia Anderson</h1>
+  <p class="tagline">Creating things since the late 1900s...Currently dreaming up ways to promote peace... <em>both internally and as a whole society.</em></p>
+    <div class="hero-buttons">
+      <a href="https://linkedin.com/in/miss-tia" target="_blank" class="hero-btn">Connect on LinkedIn</a>
+      <a href="resume.html" class="hero-btn secondary-btn">View Resume</a>
+      <a href="https://linkedin.com/in/miss-tia" target="_blank" class="hero-btn">Connect on GitHub</a>
 
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="experience-item">
-            <div class="experience-header">
-                <span class="job-title">Senior Customer Onboarding Specialist</span>
-                <span class="job-dates">August 2022 - Present</span> 
-            </div>
-            <span class="company-name">NationBuilder</span>
-            <p class="job-description">Convert free trials into loyal customers by providing effective coaching, training, and support resources. I also consult on NationBuilder's software and pricing plans, deliver product demonstrations, strategic consultations, and educational webinars to showcase the software's value. Maintain active communication with new customers during their first 90 days of implementation, guiding them to stay on track and maximize the software's potential. Assist in developing and improving customer educational programs, materials, and reference resources. </p>
-        </div>
-        <div class="experience-item">
-            <div class="experience-header">
-                <span class="job-title">Senior Software Technician</span>
-                <span class="job-dates">Jun 2019 - Aug 2022</span>
-            </div>
-            <span class="company-name">NationBuilder</span>
-            <p class="job-description">Provided SaaS technical support to customers via phone, email, and messenger. Developed advanced expertise in the NationBuilder platform, including custom theming using HTML, CSS, Liquid, and JavaScript to tailor solutions to customer needs. Leveraged tools such as SendGrid and DNS Made Easy to manage email deliverability and DNS configurations effectively. Efficiently managed customer issues and emails while documenting and troubleshooting platform-related problems using internal reporting tools. Monitored and reviewed user-submitted content to detect and address pernicious activity, ensuring compliance with company standards. Maintained up-to-date knowledge of new NationBuilder product features and improvements to provide accurate guidance on implementation and best practices. Collaborated with internal teams by identifying and escalating customer issues appropriately and supported cross-functional initiatives as needed to drive overall company success.</p>
-        </div>
-        
-        <div class="experience-item">
-            <div class="experience-header">
-                <span class="job-title">Technical Support Technician</span>
-                <span class="job-dates">Jan 2018 - Dec 2018</span>
-            </div>
-            <span class="company-name">BrightMLS</span>
-            <p class="job-description">Provided comprehensive assistance to users navigating the BrightMLS platform, ensuring a seamless and efficient experience for real estate professionals. My responsibilities included front-line technical support via phone, email, and live chat to troubleshoot and resolve user issues related to MLS system access, functionality, and integrations. I also assisted users with account setup, password resets, and profile management while maintaining a focus on data accuracy and security, all while educating the professional. This role required a customer-focused approach, strong problem-solving skills, and a thorough understanding of MLS tools and technologies to support the BrightMLS mission of connecting real estate professionals with accurate and reliable data.</p>
-        </div>
-    </section>
+  
+</div>
+  <script>
+  window.addEventListener("scroll", () => {
+    const scrollArrow = document.querySelector(".scroll-down");
+    const hero = document.querySelector(".hero");
 
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul id="skills-list"></ul> 
-    </section>
-   
-    <section id="leave-message">
-        <h2>Get in Touch. Leave Me a Message!</h2>
-        <form name="leave_message">
-            <label for="usersName">Name:</label>
-            <input type="text" id="usersName" name="usersName" required>
-            <br>
-            
-            <label for="usersEmail">Email:</label>
-            <input type="email" id="usersEmail" name="usersEmail" required>
-            <br>
-            
-            <label for="usersMessage">Message:</label>
-            <textarea id="usersMessage" name="usersMessage" required></textarea>
-            <br>
-            
-            <button type="submit">Submit</button>
-        </form>
-    </section>
+    if (!scrollArrow || !hero) return;
 
-    <section id="messages">
-        <h2>Messages</h2>
-        <ul></ul>
-    </section>
+    const heroBottom = hero.getBoundingClientRect().bottom;
 
-    <section id="connect">
-        <h2>Connect With Me on Social Media!</h2>
-        <ul>
-            <li>
-                <a href="https://github.com/Miss-Tia" target="_blank" aria-label="GitHub">
-                    <img src="images/github-mark.png" alt="GitHub icon">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/in/tia-a-a11a97170" target="_blank" aria-label="LinkedIn">
-                    <img src="images/LI-In-Bug.png" alt="LinkedIn icon">
-                </a>
-            </li>
-            <li>
-                <a href="https://www.facebook.com/pinksatin621/" target="_blank" aria-label="Facebook">
-                    <img src="images/logo-facebook.png" alt="Facebook icon">
-                </a>
-            </li>
-        </ul>
-    </section>
-    <section id="email-me">
-        <h2>If you prefer, email me instead!</h2>
-        <p>You can reach me at: <a href="mailto:andie0682@gmail.com">andie0682@gmail.com</a></p>
-    </section>
-    <footer>
+    if (heroBottom <= 0) {
+      scrollArrow.classList.add("hidden");
+    } else {
+      scrollArrow.classList.remove("hidden");
+    }
+  });
+</script>
+</header>
 
-    </footer>
+  <!-- Who is Tia -->
+  <!-- About & Current Work Section -->
+<section class="about-work">
+  <div class="info-block">
+    <h2>Who is Tia?</h2>
+    <p>I’m a software engineer in training who’s deeply rooted in empathy, curiosity, and peace. I bring a unique blend of front-end skill, back-end growth, and a love of simplicity, whether I’m cooking a cozy meal or crafting a user experience.</p>
+    <ul>
+      <li>Loves gardening, journaling, and cooking</li>
+      <li>Obsessed with peace (criminally so)</li>
+      <li>Thrives in organized chaos and spreadsheets</li>
+      <li>Passionate about creating functional, human-centered apps</li>
+    </ul>
+  </div>
 
-    
+  <div class="info-block">
+    <h2>Currently Working On</h2>
+    <p>I’m currently building and refining my Peace of Mind (POM) app: a wellness-focused journaling and gardening tool that encourages reflection and growth. It’s helping me sharpen my full-stack skills and express myself through code and calm design.</p>
+    <ul>
+      <li>UX-focused full-stack development</li>
+      <li>OpenAI integration for journal prompts</li>
+      <li>Responsive garden tracking UI</li>
+      <li>Gradual recipe feature rollout for POM app</li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Featured Project: POM App -->
+<section class="featured-project">
+  <h2>🌱 Featured Project: Peace of Mind (POM) App</h2>
+  <div class="pom-block">
+    <div class="pom-text">
+      <p><strong>POM App</strong> is a journaling and garden tracking tool designed to help users cultivate peace—both internally and in their environment. It features plant logging, journal entry prompts, and a soft, earthy UI.</p>
+      <a href="https://pom-app.onrender.com" target="_blank" class="pom-link">Check it out!</a>
+      <a href="https://github.com/Miss-Tia/pom-app" target="_blank" class="pom-link">View on GitHub</a>
+    </div>
+    <div class="pom-image">
+      <img src="images/POM.gif" alt="POM App preview gif" />
+    </div>
+  </div>
+</section>
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
+  <li>Ruby</li>
+  <li>Rails</li>
+  <li>PostgreSQL</li>
+  <li>REST APIs</li>
+  <li>Git & GitHub</li>
+  <li>SQL (BigQuery, PostgreSQL, SQlite)</li>
+  <li>Postman</li>
+  <li>Intercom Automation</li>
+  <li>NationBuilder API</li>
+  <li>Zapier</li>
+  <li>Rspec</li>
+  <li>Jira</li>
+  <li>Liquid</li>
+  <li>Responsive Design</li>
+  <li>Debugging Tools (DataDog, HoneyBadger, FullStory)</li>
+  <li>Ask me directly for more!</li>
+</ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Let’s Build Something Together...Message me!</h2>
+    <form id="contact-form">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="message">Message:</label>
+  <textarea id="message" name="message" required></textarea>
+
+  <input type="hidden" name="title" value="Message from Portfolio Site" />
+
+  <button type="submit">Send Message</button>
+</form>
+<p id="form-response" style="display:none; font-weight: bold; padding: 0.5rem; border-radius: 8px;"></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <script src="js/index.js"></script>
+   </footer>
+
+   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  window.addEventListener("load", function () {
+    emailjs.init('YMEbPpSSeiMkXllA2');
+
+    const contactForm = document.getElementById("contact-form");
+    const formResponse = document.getElementById("form-response");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      emailjs.sendForm('service_gtyx5fa', 'template_aml13ro', this)
+        .then(function () {
+          formResponse.textContent = "Message sent! You can follow up with Tia at andie0682@gmail.com if needed.";
+          formResponse.style.display = "block";
+          formResponse.style.color = "#6b8b61";
+          contactForm.reset();
+        }, function (error) {
+          console.error('EmailJS Error:', error);
+          formResponse.textContent = "❌ Oops! Something went wrong. Please try again.";
+          formResponse.style.color = "red";
+          formResponse.style.display = "block";
+        });
+    });
+  });
+    window.addEventListener("scroll", () => {
+    const hero = document.querySelector(".hero");
+    const maxFade = 200; // adjust as needed
+    const opacity = Math.max(1 - window.scrollY / maxFade, 0.2);
+    hero.style.opacity = opacity.toString();
+  });
+
+</script>
+
 </body>
 </html>

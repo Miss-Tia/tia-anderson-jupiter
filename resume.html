@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Tia Anderson</title>
+  <link href="css/index.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Nunito&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #fdfaf4, #fef9f3);
+      font-family: 'Nunito', sans-serif;
+      color: #333;
+      padding: 1rem;
+    }
+
+    .resume-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: linear-gradient(to bottom, #f0ede4, #fff7f3);
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .resume-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .resume-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #855b3f;
+    }
+
+    .resume-header .contact-info {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .resume-header p {
+      font-size: 1.1rem;
+      margin-top: 1rem;
+      color: #5c4b3b;
+    }
+
+    .resume-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .resume-cta-buttons a {
+      padding: 0.4rem 1.1rem;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 2rem;
+      transition: 0.3s ease-in-out;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brown {
+      background-color: #855b3f;
+      color: white;
+    }
+    .brown:hover {
+      background-color: white;
+      color: #855b3f;
+      border: 2px solid #855b3f;
+    }
+
+    .green {
+      background-color: #6b8b61;
+      color: white;
+    }
+    .green:hover {
+      background-color: white;
+      color: #6b8b61;
+      border: 2px solid #6b8b61;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      text-decoration: none;
+      color: #855b3f;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      color: #855b3f;
+      text-align: center;
+    }
+
+    .skills-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding-left: 0;
+    }
+    .skills-list li {
+      background-color: #e6e2d3;
+      padding: 0.6rem;
+      border-radius: 0.5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .job, .education-entry {
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .job h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: #333;
+    }
+
+    .job p, .education-entry p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .job ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+
+    .job ul li {
+      list-style: disc;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .job a {
+      color: #6b8b61;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .job a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .resume-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">← Back</a>
+  <main class="resume-container" data-aos="fade-up">
+    <div class="resume-header">
+      <h1>Tia Anderson</h1>
+      <div class="contact-info">
+        <p><a href="mailto:andie0682@gmail.com">andie0682@gmail.com</a> | 240.758.2524 | North Carolina, USA</p>
+      </div>
+      <p>
+        From onboarding engineer to engineer-engineer. I spent 5+ years translating complex software into solutions users could actually use—now I build those solutions myself. After completing Ruby on Rails training and building a fully deployed full-stack app (<strong>Peace of Mind</strong>), I’m actively seeking opportunities where my rapid skill acquisition, problem-solving mindset, and real-world project experience can thrive. I was selected as a <strong>RailsConf 2025 Scholar</strong> for my engineering potential—and I'm just getting started.
+      </p>
+      <div class="resume-cta-buttons">
+        <a href="assets/Tia_Anderson_Resume.pdf" class="brown" download>📄 Download Resume (PDF)</a>
+        <a href="https://linkedin.com/in/miss-tia" target="_blank" class="green">💼 LinkedIn</a>
+      </div>
+    </div>
+
+    <section data-aos="fade-up">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>Ruby</li>
+        <li>Ruby on Rails</li>
+        <li>PostgreSQL</li>
+        <li>APIs (RESTful)</li>
+        <li>RSpec (TDD)</li>
+        <li>Git & GitHub</li>
+        <li>Zapier</li>
+        <li>BigQuery</li>
+        <li>Jira</li>
+        <li>Intercom</li>
+        <li>DataDog</li>
+        <li>Documentation</li>
+        <li>Spanish (Fluent)</li>
+      </ul>
+    </section>
+
+    <section class="experience-section" data-aos="fade-up">
+      <h2>Experience</h2>
+      <div class="job">
+        <h3>Founder & Consultant – Tia Consulting</h3>
+        <p>2025 – Present</p>
+        <ul>
+          <li>Provide NationBuilder clients with setup, support, training, and data cleanup services.</li>
+          <li>Develop client implementation plans, manage retainers, and ensure data integrity.</li>
+          <li>Integrated CRM workflows with external APIs and tools like Zapier.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Senior Onboarding Specialist – NationBuilder</h3>
+        <p>Aug 2019 – Feb 2025</p>
+        <ul>
+          <li>Built and improved technical onboarding flows for hundreds of civic tech clients.</li>
+          <li>Created a scalable documentation framework to manage updates across teams.</li>
+          <li>Led website customizations, database imports, automations, and API configuration.</li>
+          <li>Mentored colleagues and trained enterprise customers in best practices.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Software Engineer – Peace of Mind App</h3>
+        <p>2025</p>
+        <ul>
+          <li>Built and deployed a full-stack Rails app with authentication and CRUD features.</li>
+          <li>Used RSpec for TDD, integrated OpenAI API, and deployed to Render with PostgreSQL.</li>
+          <li>Designed UI with Flexbox/Grid, implemented journal prompt generation, and ensured mobile responsiveness.</li>
+          <li><a href="https://github.com/Miss-Tia/pom-app" target="_blank">View Project →</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="education-section" data-aos="fade-up">
+      <h2>Education</h2>
+      <div class="education-entry">
+        <h3>Code the Dream</h3>
+        <p>Ruby on Rails Course (2025)</p>
+        <p>Intro to Programming (2024)</p>
+      </div>
+      <div class="education-entry">
+        <h3>Woodbridge Senior High School – Woodbridge, VA</h3>
+        <p>Advanced Studies Diploma (1996–2000)</p>
+      </div>
+    </section>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
